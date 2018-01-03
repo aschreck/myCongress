@@ -1,8 +1,8 @@
 <h1> Signup! </h1>
 
-<%= form_tag '/signup' do %>
-  Name:     <%= text_field_tag :name %>
-  Email:    <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-            <%= submit_tag "Submit" %>
+<%= form_for :user, url: '/users' do |f| %>
+  Name:     <%= f.text_field :name %>
+  Email:    <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  <%= f.submit "Submit" %>
 <% end %>

@@ -8,9 +8,10 @@ describe "when a user navigates to the main page and hits register" do
 
     expect(current_path).to eq '/signup'
 
-    fill_in "name", with: "WatchDog413"
-    fill_in "email", with: "watchdog@example.com"
-    fill_in "password", with: "password"
+    fill_in "user_name", with: "WatchDog413"
+    fill_in "user_email", with: "watchdog@example.com"
+    fill_in "user_password", with: "password"
+    
 
     click_on "Submit"
 
@@ -18,8 +19,7 @@ describe "when a user navigates to the main page and hits register" do
 
     user = User.first
 
-    expect(user.first_name).to eq "Cha"
-    expect(user.last_name).to eq "Boy"
-    expect(user.email).to eq "chaboy@example.com"
+    expect(user.name).to eq "WatchDog413"
+    expect(user.email).to eq "watchdog@example.com"
   end  
 end
