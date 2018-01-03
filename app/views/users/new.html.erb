@@ -1,10 +1,8 @@
-<%= form_for @user do |f| %>
+<h1> Signup! </h1>
 
-<%= f.label :name%>
-<%= f.text_field :last_name%>
-
-<%= f.label %> 
-<%= f.text_field %>
-
-<%= f.label %>
-<%= f.text_field %>
+<%= form_tag '/signup' do %>
+  Name:     <%= text_field_tag :name %>
+  Email:    <%= text_field_tag :email %>
+  Password: <%= password_field_tag :password %>
+            <%= submit_tag "Submit" %>
+<% end %>
