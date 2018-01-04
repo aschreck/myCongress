@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get  '/logout' => 'sessions#destroy'
 
+  get '/follow', to: "follow#create"
+
   get '/find_politicians', to: "find#index"
   namespace :api do
     namespace :v1 do

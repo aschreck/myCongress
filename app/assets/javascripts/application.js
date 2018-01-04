@@ -22,9 +22,10 @@ $(document).ready(function () {
       type: 'GET',
       url: '/api/v1/search?state=' + state,
       success: function(data) {
+        $(".politicians").empty();
         data.forEach(element => {
           name = element.name
-          $(".politicians").append("<p>" + name + "</p>")
+          $(".politicians").append("<a href='/follow?name=" + name + "'>" + name + "</a> </br >")  
         });
       }
     })
