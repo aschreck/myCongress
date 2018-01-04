@@ -16,7 +16,7 @@ describe "when a user navigates to the main page and hits register" do
     click_on "Submit"
 
     expect(current_path).to eq "/dashboard"
-    expect(page).to have_content "Add Representatives"
+    expect(page).to have_content "Follow Politicians"
     
     user = User.find_by(name: "WatchDog413")
 

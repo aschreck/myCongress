@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :congressman do
-    name "MyString"
+    name "Michael Bennet"
     uid "MyString"
-    state "MyString"
+    state "CO"
   end
 end

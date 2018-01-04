@@ -2,12 +2,13 @@ require 'rails_helper'
 
 describe "when the api is hit with get requests" do
   it "returns members by state" do
-    get '/api/v1/congressmen?state=CO'
+    create(:congressman)
 
-    response = JSON.parse(response.body)
-
-    require 'pry'; binding.pry
     
-    expect response["name"].to eq "Michael Bennet"
+    get '/api/v1/search?state=CO'
+    
+    rep = JSON.parse(response.body)
+    
+    expect(rep.first["name"]).to eq "Michael Bennet"
   end
 end
