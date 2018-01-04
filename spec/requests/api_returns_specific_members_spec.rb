@@ -6,6 +6,8 @@ describe "when the api is hit with get requests" do
 
     response = JSON.parse(response.body)
 
-    expect response["name"] .to eq "Michael Bennet"
+    require 'pry'; binding.pry
+    
+    expect response["name"].to eq "Michael Bennet"
   end
 end
