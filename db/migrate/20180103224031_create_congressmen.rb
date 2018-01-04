@@ -5,6 +5,7 @@ class CreateCongressmen < ActiveRecord::Migration[5.1]
       t.string :uid
       t.string :state
       t.string :house
+      t.string :api_uri
 
       t.timestamps
     end

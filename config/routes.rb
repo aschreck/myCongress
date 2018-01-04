@@ -7,4 +7,10 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
+  namespace :api do
+    namespace :v1 do
+      resources :search, only: [:index]
+    end
+  end
 end

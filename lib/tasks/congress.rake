@@ -14,7 +14,8 @@ namespace :congress do
       Congressman.create(name: name,
                          house: "Senate",
                          uid: senator["id"],
-                         state: senator["state"]
+                         state: senator["state"],
+                         api_uri: senator["api_uri"]
                          )
     end
 
@@ -27,7 +28,8 @@ namespace :congress do
       Congressman.create(name: name,
                          house: "Senate",
                          uid: rep["id"],
-                         state: rep["state"]
+                         state: rep["state"],
+                         api_uri: rep["api_uri"]
                          )
     end
   end
