@@ -81,5 +81,6 @@ test:
 production:
   <<: *default
   database: politician_tracker_production
-  username: politician_tracker
+  username: politician
+  password: password
   password: <%= ENV['POLITICIAN_TRACKER_DATABASE_PASSWORD'] %>

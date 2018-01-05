@@ -1,5 +1,7 @@
 {
   "name": "politician_tracker",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "uglify-es": "^3.3.4"
+  }
 }

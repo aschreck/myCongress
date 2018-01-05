@@ -17,8 +17,6 @@ class DashboardController < ApplicationController
         end
         pv
       end
-
-
     else 
       redirect_to '/signup'
     end 
