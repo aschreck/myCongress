@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "when the api is hit with get requests" do
   it "returns members by state" do
-    create(:congressman)
+    create(:politician)
 
     
     get '/api/v1/search?state=CO'

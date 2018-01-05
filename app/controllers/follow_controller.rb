@@ -1,9 +1,9 @@
 class FollowController < ApplicationController
 
   def create
-   congressman = Congressman.find_by(name: params["name"]) 
+   congressman = Politician.find_by(name: params["name"]) 
    user = current_user 
-   Following.create(user_id: user.id, congressman_id: congressman.id)
+   Following.create(user_id: user.id, politician_id: congressman.id)
    
    redirect_to '/find_politicians'
   end

@@ -1,6 +1,6 @@
-class CreateCongressmen < ActiveRecord::Migration[5.1]
+class CreatePoliticians < ActiveRecord::Migration[5.1]
   def change
-    create_table :congressmen do |t|
+    create_table :politicians do |t|
       t.string :name
       t.string :uid
       t.string :state

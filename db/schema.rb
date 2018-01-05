@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104010553) do
+ActiveRecord::Schema.define(version: 20180105005948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "congressmen", force: :cascade do |t|
+  create_table "followings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "politician_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["politician_id"], name: "index_followings_on_politician_id"
+    t.index ["user_id"], name: "index_followings_on_user_id"
+  end
+
+  create_table "politicians", force: :cascade do |t|
     t.string "name"
     t.string "uid"
     t.string "state"
@@ -23,15 +32,6 @@ ActiveRecord::Schema.define(version: 20180104010553) do
     t.string "api_uri"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "followings", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "congressman_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["congressman_id"], name: "index_followings_on_congressman_id"
-    t.index ["user_id"], name: "index_followings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

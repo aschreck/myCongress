@@ -11,7 +11,7 @@ namespace :congress do
     senators = congress["results"].first["members"]
     senators.each do |senator|
       name = senator["first_name"] + " " + senator["last_name"]
-      Congressman.create(name: name,
+      Politician.create(name: name,
                          house: "Senate",
                          uid: senator["id"],
                          state: senator["state"],
@@ -25,7 +25,7 @@ namespace :congress do
     reps = congress["results"].first["members"]
     reps.each do |rep|
       name = rep["first_name"] + " " + rep["last_name"]
-      Congressman.create(name: name,
+      Politician.create(name: name,
                          house: "Senate",
                          uid: rep["id"],
                          state: rep["state"],
