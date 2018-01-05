@@ -6,7 +6,7 @@ class Vote
               :date,
               :votes_for,
               :votes_against,
-              :absentions,
+              :abstentions,
               :vote_of_politician
 
   def initialize(params)
