@@ -6,7 +6,6 @@ class PropublicaService
     end
   end
 
-  private
     attr_reader :conn
 
     def get_json(url)
