@@ -20,5 +20,10 @@ class Vote
     @abstentions  = params[:total][:not_voting]
     @vote_of_politician = params[:position]
   end 
-  
+
+  def self.instantiate_votes(votes)
+    votes[:results][0][:votes].map do |vote|
+      captured_vote = Vote.new(vote) 
+    end
+  end 
 end
