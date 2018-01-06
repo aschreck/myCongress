@@ -1,6 +1,6 @@
 <h2>Welcome <%= @user.name%>!</h2>
 <%= link_to "Follow Politicians", '/find_politicians'%>
-<% @all_politician_votes.each do |politician_vote| %>
+<% @votes.each do |politician_vote| %>
  <h1>Votes for <%=politician_vote.politician%></h1>
  <% politician_vote.votes.each do |vote|%>
   <ul>
