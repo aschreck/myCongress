@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'helpers.rb'
 
 describe "as a user when I log in with my account info" do
   it "takes me to my dashboard" do
@@ -15,8 +16,11 @@ describe "as a user when I log in with my account info" do
 
     expect(current_path).to eq '/dashboard'
     expect(page).to have_content 'Lebron James'
-
-    
+    expect(page).to have_css('.title')
+    expect(page).to have_css('.chamber')
+    expect(page).to have_css('.vote')
+    expect(page).to have_css('.spread')
+    expect(page).to have_css('.date')
   end
 
   it "/dashboard takes me to the login page if I am not logged in" do
