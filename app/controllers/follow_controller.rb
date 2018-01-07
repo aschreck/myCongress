@@ -5,7 +5,8 @@ class FollowController < ApplicationController
    user = current_user 
    Following.create(user_id: user.id, politician_id: congressman.id)
    
-   redirect_to '/find_politicians'
+   flash[:success] = "Successfully followed #{congressman.name}"
+   redirect_to '/dashboard'
   end
   
 end

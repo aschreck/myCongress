@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root :to => redirect('/home')
+  get '/home', to: 'home#index'
   get  '/', to: "main#index"
   get  '/signup', to: "users#new"
   post '/users', to: "users#create"

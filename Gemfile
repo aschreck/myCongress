@@ -33,6 +33,7 @@ gem 'figaro'
 gem 'faraday'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'chartkick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
