@@ -1,14 +1,20 @@
-<h2>Welcome <%= @user.name%>!</h2>
-<%= link_to "Follow Politicians", '/find_politicians'%>
-<% @votes.each do |politician_vote| %>
- <h1>Votes for <%=politician_vote.politician%></h1>
- <% politician_vote.votes.each do |vote|%>
-  <ul>
-  <li>Title: <%=vote.bill_title%></li>
-  <li>Chamber: <%=vote.chamber%></li>
-  <li><%=politician_vote.politician%> voted <%= vote.vote_of_politician%> on this bill.</li>
-  <li>There were <%=vote.votes_for%> votes in favor, <%= vote.votes_against%> votes against, and <%=vote.abstentions%> abstentions.</li>
-  <li>Vote took place on <%=vote.date%> at <%=vote.time%></li>
-  </ul>
-  <% end %>
-<% end %>
+<div>
+  <h2>Welcome <%= @user.name%>!</h2>
+  <%= link_to "Follow Politicians", '/find_politicians'%>
+  <div class='allVotes'>
+  <% @votes.each do |politician_vote| %>
+    <div class='politicianVotes'>
+      <h1>Votes for <%=politician_vote.politician%></h1>
+      <% politician_vote.votes.each do |vote|%>
+        <ul>
+        <li>Title: <%=vote.bill_title%></li>
+        <li>Chamber: <%=vote.chamber%></li>
+        <li><%=politician_vote.politician%> voted <%= vote.vote_of_politician%> on this bill.</li>
+        <li>There were <%=vote.votes_for%> votes in favor, <%= vote.votes_against%> votes against, and <%=vote.abstentions%> abstentions.</li>
+        <li>Vote took place on <%=vote.date%> at <%=vote.time%></li>
+        </ul>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
