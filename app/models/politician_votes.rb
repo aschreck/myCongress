@@ -1,6 +1,7 @@
 class PoliticianVotes 
-  attr_reader   :politician
+  attr_reader   :politician, :analytics
   attr_accessor :votes
+
 
   def initialize(politician)
     @politician = politician
@@ -14,6 +15,13 @@ class PoliticianVotes
     end
   end
 
+  def gather_analytics(votes)
+    analyst = VotesAnalyst.new
+    analyst.vote_totals(votes)
+    @analytics = analyst
+  end 
+
+  private
 
     def self.propublica 
       PropublicaService.new

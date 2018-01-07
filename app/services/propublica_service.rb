@@ -12,6 +12,7 @@ class PropublicaService
     pv.votes = all_votes[:results][0][:votes].map do |vote|
       captured_vote = Vote.new(vote) 
     end
+    pv.gather_analytics(pv.votes)
     pv
   end
 
