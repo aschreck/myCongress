@@ -2,20 +2,22 @@
   <h2>Welcome <%= @user.name%>!</h2>
   <%= link_to "Follow Politicians", '/find_politicians'%>
   <div class='allVotes'>
-  <% @votes.each do |politician_vote| %>
-    <div class='politicianVotes'>
-      <h1>Votes for <%=politician_vote.politician%></h1>
-      <h2>Voted <%=politician_vote.analytics.yes_percentage%> yes, <%=politician_vote.analytics.no_percentage%> no </h2>
-      <% politician_vote.votes.each do |vote|%>
-        <ul>
-        <h4 class="title">Title: <%=vote.bill_title%></h4>
-        <li class="chamber">Chamber: <%=vote.chamber%></li>
-        <li class="vote"><%=politician_vote.politician%> voted <%= vote.vote_of_politician%> on this bill.</li>
-        <li class="spread">There were <%=vote.votes_for%> votes in favor, <%= vote.votes_against%> votes against, and <%=vote.abstentions%> abstentions.</li>
-        <li class="date">Vote took place on <%=vote.date%> at <%=vote.time%></li>
-        </ul>
+    <% @votes.each do |politician_vote| %>
+      <h1 class='p-heading'>Votes for <%=politician_vote.politician%></h1>
+      <div class='politicianVotes'>
+        <h2>Voted <%=politician_vote.analytics.yes_percentage%>% yes, <%=politician_vote.analytics.no_percentage%>% no </h2>
+        <% politician_vote.votes.each do |vote|%>
+          <div class='vote'>
+            <ul>
+            <h4 class="title">Title: <%=vote.bill_title%></h4>
+            <li class="chamber">Chamber: <%=vote.chamber%></li>
+            <li class="p-vote"><%=politician_vote.politician%> voted <%= vote.vote_of_politician%> on this bill.</li>
+            <li class="spread">There were <%=vote.votes_for%> votes in favor, <%= vote.votes_against%> votes against, and <%=vote.abstentions%> abstentions.</li>
+            <li class="date">Vote took place on <%=vote.date%> at <%=vote.time%></li>
+            </ul>
+          </div>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+   <% end %>
   </div>
 </div>
