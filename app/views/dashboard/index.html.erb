@@ -1,8 +1,9 @@
 <div>
-  <h2>Welcome <%= @user.name%>!</h2>
+  <h2 class="centered">Welcome <%= @user.name%>!</h2>
   <%= link_to "Follow Politicians", '/find_politicians'%>
   <div class='allVotes'>
     <% @votes.each do |politician_vote| %>
+      <%=link_to "Unfollow", %> 
       <h1 class='p-heading'>Votes for <%=politician_vote.politician%></h1>
       <div class='politicianVotes'>
         <h2>Voted <%=politician_vote.analytics.yes_percentage%>% yes, <%=politician_vote.analytics.no_percentage%>% no </h2>

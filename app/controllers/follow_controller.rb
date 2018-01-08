@@ -9,4 +9,7 @@ class FollowController < ApplicationController
    redirect_to '/dashboard'
   end
   
+  def destroy
+
+  end 
 end

@@ -3,14 +3,26 @@
   <head>
     <title>PoliticianTracker</title>
     <%= csrf_meta_tags %>
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <% if current_user%>
+      <ul class='topNav'>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/find_politicians">Follow Politcians</a></li>
+        <li id='signout'><a href="/logout">Logout</a></li>
+     </ul>
+   <% else %>
+      <ul class='topNav'>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/signup">Signup</a></li>
+      </ul>
+   <% end %>
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

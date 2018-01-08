@@ -8,3 +8,30 @@
   padding-bottom: 20px;
   border-radius: 12px;
 }
+.topNav {
+  background-color: #000000d7; 
+  padding: 15px;
+  margin-top: -10px;
+  margin-left: -10px;
+  margin-right: -10px;
+} .topNav li {
+  display: inline;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+} .topNav a {
+  text-decoration: none;
+  color: white;
+}.topNav li:hover {
+  background-color: #A0522D;
+}
+
+#signout {
+  float: right;
+  margin-top: -15px;
+}
+
+.centered {
+  text-align: center;
+}
