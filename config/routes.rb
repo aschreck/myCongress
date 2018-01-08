@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get  '/logout' => 'sessions#destroy'
 
   get '/follow', to: "follow#create"
+  delete '/follow', to: "follow#destroy"
 
   get '/find_politicians', to: "find#index"
   namespace :api do

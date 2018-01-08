@@ -3,8 +3,8 @@
   <%= link_to "Follow Politicians", '/find_politicians'%>
   <div class='allVotes'>
     <% @votes.each do |politician_vote| %>
-      <%=link_to "Unfollow", %> 
       <h1 class='p-heading'>Votes for <%=politician_vote.politician%></h1>
+      <p><%=link_to "Unfollow", "/follow?name=#{politician_vote.politician}", method: :delete %> </p>
       <div class='politicianVotes'>
         <h2>Voted <%=politician_vote.analytics.yes_percentage%>% yes, <%=politician_vote.analytics.no_percentage%>% no </h2>
         <% politician_vote.votes.each do |vote|%>
