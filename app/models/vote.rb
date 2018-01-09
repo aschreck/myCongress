@@ -11,13 +11,7 @@ class Vote
               :bill_id
 
   def initialize(params)
-    if params[:bill][:title]
-      @bill_title   = params[:bill][:title]
-    elsif !params[:description] == ""
-      @bill_title   = params[:description]
-    else 
-      @bill_title   = params[:question]
-    end
+    @bill_title = set_title(params)
     @description   = params[:description]
     @chamber       = params[:chamber]
     @time          = params[:time]
@@ -28,6 +22,16 @@ class Vote
     @bill_id       = normalize(params[:bill][:bill_id])
     @vote_of_politician = params[:position]
   end 
+
+  def set_title(params)
+    if params[:bill][:title]
+      params[:bill][:title]
+    elsif !params[:description] == ""
+      params[:description]
+    else 
+      params[:question]
+    end
+  end
 
   def normalize(data)
     if data.include?("-")
