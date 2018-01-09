@@ -1,4 +1,3 @@
-
 class DashboardController < ApplicationController
   
   def index
@@ -9,4 +8,9 @@ class DashboardController < ApplicationController
       redirect_to '/signup'
     end 
   end
+
+  def show
+    politician = Politician.find_by(name: params[:name])
+    @votes = PoliticianVotes.gather_votes_by_politician([politician])[0] 
+  end 
 end 
