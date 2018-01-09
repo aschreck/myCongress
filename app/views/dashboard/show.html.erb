@@ -6,13 +6,15 @@
   <% @votes.votes.each do |vote|%>
     <div class='vote'>
       <ul>
-      <li><%= link_to "View Bill", "/bill?id=#{vote.bill_id}"%> </li>
-      <h4 class="title">Title: <%=vote.bill_title%></h4>
-      <li class="chamber">Chamber: <%=vote.chamber%></li>
-      <li class="p-vote"><%=@votes.politician%> voted <%= vote.vote_of_politician%> on this bill.</li>
-      <li class="spread">There were <%=vote.votes_for%> votes in favor, <%= vote.votes_against%> votes against, and <%=vote.abstentions%> abstentions.</li>
-      <li class="date">Vote took place on <%=vote.date%> at <%=vote.time%></li>
-      </ul>
+        <% if vote.type == "Bill"%>
+        <li><%= link_to "View Bill", "/bill?id=#{vote.bill_id}"%> </li>
+        <% end %>
+        <h4 class="title">Title: <%=vote.bill_title%></h4>
+        <li class="chamber">Chamber: <%=vote.chamber%></li>
+        <li class="p-vote"><%=@votes.politician%> voted <%= vote.vote_of_politician%> on this bill.</li>
+        <li class="spread">There were <%=vote.votes_for%> votes in favor, <%= vote.votes_against%> votes against, and <%=vote.abstentions%> abstentions.</li>
+        <li class="date">Vote took place on <%=vote.date%> at <%=vote.time%></li>
+        </ul>
     </div>
   <% end %>
 </div>

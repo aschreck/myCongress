@@ -8,7 +8,8 @@ class Vote
               :votes_against,
               :abstentions,
               :vote_of_politician,
-              :bill_id
+              :bill_id,
+              :type
 
   def initialize(params)
     @bill_title = set_title(params)
@@ -25,10 +26,13 @@ class Vote
 
   def set_title(params)
     if params[:bill][:title]
+      @type  = "Bill"
       params[:bill][:title]
     elsif !params[:description] == ""
+      @type = "Nomination"
       params[:description]
     else 
+      type = nil
       params[:question]
     end
   end
