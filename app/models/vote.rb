@@ -10,7 +10,11 @@ class Vote
               :vote_of_politician
 
   def initialize(params)
-    @bill_title   = params[:bill][:title]
+    if params[:bill][:title]
+      @bill_title   = params[:bill][:title]
+    else
+      @bill_title   = params[:description]
+    end
     @description  = params[:description]
     @chamber      = params[:chamber]
     @time         = params[:time]
