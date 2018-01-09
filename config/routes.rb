@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   delete '/follow', to: "follow#destroy"
 
   get '/find_politicians', to: "find#index"
+  get '/politician',      to: 'dashboard#show'
   namespace :api do
     namespace :v1 do
       resources :search, only: [:index]

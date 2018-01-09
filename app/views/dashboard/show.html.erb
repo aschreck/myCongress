@@ -1,0 +1,17 @@
+
+<h1 class='p-heading'><%= link_to "Votes for #{@votes.politician}", "/politician?name=#{@votes.politician}" %> </h1> 
+<p><%=link_to "Unfollow", "/follow?name=#{@votes.politician}", method: :delete %> </p>
+<div class='politicianVotes'>
+  <h2>Voted <%=@votes.analytics.yes_percentage%>% yes, <%=@votes.analytics.no_percentage%>% no </h2>
+  <% @votes.votes.each do |vote|%>
+    <div class='vote'>
+      <ul>
+      <h4 class="title">Title: <%=vote.bill_title%></h4>
+      <li class="chamber">Chamber: <%=vote.chamber%></li>
+      <li class="p-vote"><%=@votes.politician%> voted <%= vote.vote_of_politician%> on this bill.</li>
+      <li class="spread">There were <%=vote.votes_for%> votes in favor, <%= vote.votes_against%> votes against, and <%=vote.abstentions%> abstentions.</li>
+      <li class="date">Vote took place on <%=vote.date%> at <%=vote.time%></li>
+      </ul>
+    </div>
+  <% end %>
+</div>

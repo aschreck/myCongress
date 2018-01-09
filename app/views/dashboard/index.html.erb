@@ -3,21 +3,20 @@
   <%= link_to "Follow Politicians", '/find_politicians'%>
   <div class='allVotes'>
     <% @votes.each do |politician_vote| %>
-      <h1 class='p-heading'>Votes for <%=politician_vote.politician%></h1>
-      <p><%=link_to "Unfollow", "/follow?name=#{politician_vote.politician}", method: :delete %> </p>
+      <h1 class='p-heading'> <%="Votes for #{politician_vote.politician}"%> </h1> 
+      <p class='centered'><%=link_to "Unfollow", "/follow?name=#{politician_vote.politician}", method: :delete %> </p>
+      <h4 class='centered'><%= link_to "See More", "/politician?name=#{politician_vote.politician}" %></h4>
       <div class='politicianVotes'>
         <h2>Voted <%=politician_vote.analytics.yes_percentage%>% yes, <%=politician_vote.analytics.no_percentage%>% no </h2>
-        <% politician_vote.votes.each do |vote|%>
           <div class='vote'>
             <ul>
-            <h4 class="title">Title: <%=vote.bill_title%></h4>
-            <li class="chamber">Chamber: <%=vote.chamber%></li>
-            <li class="p-vote"><%=politician_vote.politician%> voted <%= vote.vote_of_politician%> on this bill.</li>
-            <li class="spread">There were <%=vote.votes_for%> votes in favor, <%= vote.votes_against%> votes against, and <%=vote.abstentions%> abstentions.</li>
-            <li class="date">Vote took place on <%=vote.date%> at <%=vote.time%></li>
+            <h4 class="title">Title: <%=politician_vote.votes.first.bill_title%></h4>
+            <li class="chamber">Chamber: <%=politician_vote.votes.first.chamber%></li>
+            <li class="p-vote"><%=politician_vote.politician%> voted <%= politician_vote.votes.first.vote_of_politician%> on this bill.</li>
+            <li class="spread">There were <%=politician_vote.votes.first.votes_for%> votes in fav or, <%= politician_vote.votes.first.votes_against%> votes against, and <%=politician_vote.votes.first.abstentions%> abstentions.</li>
+            <li class="date">Vote took place on <%=politician_vote.votes.first.date%> at <%=politician_vote.votes.first.time%></li>
             </ul>
           </div>
-        <% end %>
       </div>
    <% end %>
   </div>
