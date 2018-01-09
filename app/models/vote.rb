@@ -13,8 +13,10 @@ class Vote
   def initialize(params)
     if params[:bill][:title]
       @bill_title   = params[:bill][:title]
-    else
+    elsif !params[:description] == ""
       @bill_title   = params[:description]
+    else 
+      @bill_title   = params[:question]
     end
     @description   = params[:description]
     @chamber       = params[:chamber]
