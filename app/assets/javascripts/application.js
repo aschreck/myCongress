@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery-ui
+//= require fusioncharts/fusioncharts
+//= require fusioncharts/fusioncharts.charts
+//= require fusioncharts/themes/fusioncharts.theme.fint
 
 $(document).ready(function () {
   $('.dropDown').on('change', function(event){
