@@ -1,5 +1,7 @@
 class Bill
   #sponsor_uri is )))also included here—I could make that name clickable too
+    attr_accessor :votes 
+
     attr_reader :short_title, 
                 :title, 
                 :sponsor, 
@@ -24,18 +26,17 @@ class Bill
     @r_cosponsors = params[:cosponsors_by_party][:R]
     @summary= params[:summary_short]
     @last_action = params[:latest_major_action]
+    @votes =[]
   end
 
   def self.get_bill(bill_id)
-
     #call the service and get the bill json data
     response = propublica.get_bill_details(bill_id)
-         
-
-
-
     #insantiate the bill object and return it. 
-    
+    bill = Bill.new(response)
+    bill.votes = response[:votes].map do |vote| 
+      BillVote.new(vote)
+    end
   end 
 
   private
