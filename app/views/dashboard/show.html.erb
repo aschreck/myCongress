@@ -1,9 +1,8 @@
 
-<h1 class='p-heading'><%= link_to "Votes for #{@votes.politician}", "/politician?name=#{@votes.politician}" %> </h1> 
-<p><%=link_to "Unfollow", "/sfollow?name=#{@votes.politician}", method: :delete %> </p>
-<div id='chartContainer'><%= @chart.render() %></div>
+<h1 class='p-heading'><%= "#{@votes.politician}"%> </h1> 
+<p><%=link_to "Unfollow", "/follow?name=#{@votes.politician}", method: :delete %> </p>
+<div class="graph" id='chartContainer'><%= @chart.render() %></div>
 <div class='politicianVotes'>
-  <h2>Voted <%=@votes.analytics.yes_percentage%>% yes, <%=@votes.analytics.no_percentage%>% no </h2>
   <% @votes.votes.each do |vote|%>
     <div class='vote'>
       <ul>

@@ -1,6 +1,6 @@
 <%=@bill.title%>
-<div id="chartContainer-1"><%= @charts[0].render() %></div>
-<div id="chartContainer-2"><%= @charts[1].render() %></div>
+<div class='graph' id="chartContainer-1"><%= @charts[0].render() %></div>
+<div class='graph' id="chartContainer-2"><%= @charts[1].render() %></div>
 <% unless @charts[2].nil?%>
-  <div id="chartContainer-3"><%= @charts[2].render() %></div> 
+  <div class='graph' id="chartContainer-3"><%= @charts[2].render() %></div> 
 <% end %>
