@@ -30,13 +30,12 @@ class Bill
   end
 
   def self.get_bill(bill_id)
-    #call the service and get the bill json data
     response = propublica.get_bill_details(bill_id)
-    #insantiate the bill object and return it. 
     bill = Bill.new(response)
     bill.votes = response[:votes].map do |vote| 
       BillVote.new(vote)
     end
+    bill
   end 
 
   private
