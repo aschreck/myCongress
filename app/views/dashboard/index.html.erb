@@ -13,7 +13,7 @@
             <h4 class="title">Title: <%=politician_vote.votes.first.bill_title%></h4>
             <li class="chamber">Chamber: <%=politician_vote.votes.first.chamber%></li>
             <li class="p-vote"><%=politician_vote.politician%> voted <%= politician_vote.votes.first.vote_of_politician%> on this bill.</li>
-            <li class="spread">There were <%=politician_vote.votes.first.votes_for%> votes in fav or, <%= politician_vote.votes.first.votes_against%> votes against, and <%=politician_vote.votes.first.abstentions%> abstentions.</li>
+            <li class="spread">There were <%=politician_vote.votes.first.votes_for%> votes in favor, <%= politician_vote.votes.first.votes_against%> votes against, and <%=politician_vote.votes.first.abstentions%> abstentions.</li>
             <li class="date">Vote took place on <%=politician_vote.votes.first.date%> at <%=politician_vote.votes.first.time%></li>
             </ul>
           </div>
