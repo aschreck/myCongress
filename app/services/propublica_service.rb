@@ -17,9 +17,9 @@ class PropublicaService
   end
 
   def get_bill_details(bill_id)
-    bill_json = get_json("/congress/v1/115/bills/#{bill_id}.json")
-    
+    get_json("/congress/v1/115/bills/#{bill_id}.json")[:results][0]
   end
+
     attr_reader :conn
 
     def get_json(url)

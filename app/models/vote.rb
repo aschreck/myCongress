@@ -32,7 +32,7 @@ class Vote
       @type = "Nomination"
       params[:description]
     else 
-      type = nil
+      @type = nil
       params[:question]
     end
   end
@@ -43,5 +43,5 @@ class Vote
     end 
     data.downcase
   end 
-  
+
 end

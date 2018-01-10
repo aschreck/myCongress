@@ -1,9 +1,8 @@
 class BillController < ApplicationController
 
   def index
-
-      require 'pry'; binding.pry
-
-      
+    bills = Bill.get_bill(params[:id])
+    require 'pry'; binding.pry
   end 
+
 end 
