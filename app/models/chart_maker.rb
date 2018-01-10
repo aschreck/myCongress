@@ -16,9 +16,9 @@ class ChartMaker
                     {
                       seriesname: "Previous Year",
                       data: [
-                          { value: vote.yes_votes },
-                          { value: vote.no_votes },
-                          { value: vote.not_voting }
+                          { value: vote.yes_votes, label: "Votes in Favor" },
+                          { value: vote.no_votes, label: "Votes Against"},
+                          { value: vote.not_voting, label: "Abstentions" }
                         ]
                     },
               ]
@@ -34,7 +34,7 @@ class ChartMaker
         renderAt: "chartContainer",
         dataSource: {
             chart: {
-            caption: "#{p_vote.politician} voted #{p_vote.analytics.yes_percentage}% yes and #{p_vote.analytics.no_percentage}% no.",
+            caption: "#{p_vote.politician} voted #{p_vote.analytics.yes_percentage}% yes and #{p_vote.analytics.no_percentage}% no on recent legislation.",
             theme: "fint",
             exportEnabled: "1",
             },
@@ -42,8 +42,8 @@ class ChartMaker
                     {
                       seriesname: "Previous Year",
                       data: [
-                          { value: p_vote.analytics.yes_percentage},
-                          { value: p_vote.analytics.no_percentage}
+                          { value: p_vote.analytics.yes_percentage, label: "Bills Voted For"},
+                          { value: p_vote.analytics.no_percentage, label:" Bills Voted Against" }
                         ]
                     },
               ]
