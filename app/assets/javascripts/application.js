@@ -17,6 +17,7 @@
 //= require fusioncharts/fusioncharts
 //= require fusioncharts/fusioncharts.charts
 //= require fusioncharts/themes/fusioncharts.theme.fint
+//= require_tree ../../../vendor/assets/javascripts/fusioncharts/.
 
 $(document).ready(function () {
   $('.dropDown').on('change', function(event){
