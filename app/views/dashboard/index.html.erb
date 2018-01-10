@@ -1,13 +1,13 @@
 <div>
-  <h2 class="centered">Welcome <%= @user.name%>!</h2>
-  <%= link_to "Follow Politicians", '/find_politicians'%>
+  <h2>Welcome <%= @user.name%>!</h2>
   <div class='allVotes'>
     <% @votes.each do |politician_vote| %>
-      <h1 class='p-heading'> <%="Votes for #{politician_vote.politician}"%> </h1> 
-      <p class='centered'><%=link_to "Unfollow", "/follow?name=#{politician_vote.politician}", method: :delete %> </p>
-      <h4 class='centered'><%= link_to "See More", "/politician?name=#{politician_vote.politician}" %></h4>
+      <h1 class='p-heading'> <%="#{politician_vote.politician}"%> </h1> 
+      <div id='index-buttons'>
+        <p class='centered index-button'><%=link_to "Unfollow", "/follow?name=#{politician_vote.politician}", method: :delete, class: 'button' %> </p>
+        <h4 class='centered index-button' ><%= link_to "See More Votes", "/politician?name=#{politician_vote.politician}", class: 'button' %></h4>
+      </div>
       <div class='politicianVotes'>
-        <h2>Voted <%=politician_vote.analytics.yes_percentage%>% yes, <%=politician_vote.analytics.no_percentage%>% no </h2>
           <div class='vote'>
             <ul>
             <h4 class="title">Title: <%=politician_vote.votes.first.bill_title%></h4>
