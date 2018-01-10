@@ -2,13 +2,13 @@ class ChartMaker
 
   def self.pie_chart(vote, index)
     Fusioncharts::Chart.new({
-        width: "600",
-        height: "400",
+        width: "500",
+        height: "300",
         type: "pie2d",
         renderAt: "chartContainer-#{index}",
         dataSource: {
             chart: {
-            caption: "",
+            caption: "#{vote.chamber}, #{vote.question}, #{vote.result} ",
             theme: "fint",
             exportEnabled: "1",
             },
