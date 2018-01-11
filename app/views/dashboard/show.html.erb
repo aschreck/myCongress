@@ -1,5 +1,5 @@
 <div class = "show-heading">
-  <h1 id="show-element-1"><%={@votes.politician}%> </h1> 
+  <h1 id="show-element-1"><%=@votes.politician%> </h1> 
   <%=link_to "Unfollow", "/follow?name=#{@votes.politician}", method: :delete, class: "button show-element-2" %>
 </div>
 <div class="graph" id='chartContainer'><%= @chart.render() %></div>
@@ -13,6 +13,7 @@
         <li class="spread">There were <%=vote.votes_for%> votes in favor, <%= vote.votes_against%> votes against, and <%=vote.abstentions%> abstentions.</li>
         <li class="date">Vote took place on <%=vote.date%> at <%=vote.time%></li>
         <% if vote.type == "Bill"%>
+        </br>
         <li><%= link_to "View Bill", "/bill?id=#{vote.bill_id}", class: "button"%> </li>
         <% end %>
         </ul>
