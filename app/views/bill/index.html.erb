@@ -1,8 +1,14 @@
 <div id='bill-container'>
   <h1 class='centered'><%= @bill.short_title%></h1>
+ <% if @bill.d_cosponsors == 0  && @bill.r_cosponsors == 0 %> 
+  <div class="sponsor">
+    Sponsored by <%="#{@bill.sponsor} (#{@bill.sponsor_party}, #{@bill.sponsor_state})"%>
+  </div>
+ <% else %>
   <div class="sponsor">
     Sponsored by <%="#{@bill.sponsor} (#{@bill.sponsor_party}, #{@bill.sponsor_state}) along with #{@bill.d_cosponsors} Democrats and #{@bill.r_cosponsors} Republicans"%>
   </div>
+ <% end %>
 
   <p id="bill-summary"><%=@bill.summary%></p>
   <div class='graph' id="chartContainer-1"><%= @charts[0].render() %></div>
