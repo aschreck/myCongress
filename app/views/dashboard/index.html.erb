@@ -1,5 +1,5 @@
 <div>
-  <h2 class='centered'>Welcome <%= @user.name%>!</h2>
+  <h2 class='centered greeting'>Welcome <%= @user.name%>!</h2>
   <div class='allVotes'>
     <% @presenters.each do |presenter| %>
       <h1 class='p-heading'> <%=presenter.politician%> (<%=presenter.chamber %>) </h1> 
