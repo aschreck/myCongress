@@ -11,13 +11,12 @@ describe 'as a user when I visit my dashboard and click on a politicians name' d
     
     visit '/dashboard'
     
-    click_on "Michael Bennet"
+    click_on "See More Votes"
     
     expect(current_path).to eq '/politician'
     
     expect(page).to have_content("Michael Bennet")
     expect(page).to have_css('.title')
-    expect(page).to have_css('.chamber')
     expect(page).to have_css('.vote')
     expect(page).to have_css('.spread')
     expect(page).to have_css('.date')

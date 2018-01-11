@@ -17,7 +17,6 @@ describe "as a user when I log in with my account info" do
     expect(current_path).to eq '/dashboard'
     expect(page).to have_content 'Lebron James'
     expect(page).to have_css('.title')
-    expect(page).to have_css('.chamber')
     expect(page).to have_css('.vote')
     expect(page).to have_css('.spread')
     expect(page).to have_css('.date')

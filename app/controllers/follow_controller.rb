@@ -14,6 +14,7 @@ class FollowController < ApplicationController
     politician = Politician.find_by(name: params["name"])
     following = Following.where("user_id = ? and politician_id = ?", "#{current_user.id}","#{politician.id}").first
     following.destroy
+
     redirect_to '/dashboard'
     flash[:success] = "Successfully unfollowed #{politician.name}"
   end 

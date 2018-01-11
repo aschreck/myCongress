@@ -50,6 +50,7 @@ group :development, :test do
   gem 'pry'
   gem 'launchy'
   gem 'database_cleaner'
+  gem 'simplecov', :require => false, :group => :test
 end
 
 group :development do
