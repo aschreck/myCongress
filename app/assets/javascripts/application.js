@@ -35,7 +35,6 @@ $(document).ready(function () {
             <a href='/follow?name=${name}'>Follow</a> </br >
             </div>
           `)  
-          // $(".politicians").append(``)  
         });
       }
     })
