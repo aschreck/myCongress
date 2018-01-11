@@ -1,18 +1,13 @@
-body {
-}
-.allVotes{
-
-} 
-
-
 .p-heading{
   text-align: center;
 }
 
 .vote {
-  border-style: solid;
+  border-style: double;
   border-width: 2px;
+  border-color: rgb(145, 145, 145);
   margin: 5px;
+  background-color: #d2eaf9;
 }
 
 ul {
