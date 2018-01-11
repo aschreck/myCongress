@@ -9,28 +9,3 @@ class BillController < ApplicationController
     @chart = @charts.first
   end 
 end 
-
-#problem: I need to get the charts to hit different divs in a dynamic way. 
-    #   Fusioncharts::Chart.new({
-    #     width: "600",
-    #     height: "400",
-    #     type: "pie2d",
-    #     renderAt: "chartContainer",
-    #     dataSource: {
-    #         chart: {
-    #         caption: "",
-    #         theme: "fint",
-    #         exportEnabled: "1",
-    #         },
-    #             dataset: [
-    #                 {
-    #                     seriesname: "Previous Year",
-    #                     data: [
-    #                         { value: vote.yes_votes },
-    #                         { value: vote.no_votes },
-    #                         { value: vote.not_voting }
-    #                     ]
-    #                 },
-    #           ]
-    #     }
-    #  })

@@ -12,9 +12,7 @@ class DashboardController < ApplicationController
 
   def show
     politician = Politician.find_by(name: params[:name])
-    votes = PoliticianVotes.gather_votes_by_politician([politician])[0] 
-    chart = ChartMaker.analytics_pie_chart(@votes)
-    @presenters = 
-    PoliticianVotesPresenter.new(votes, chart)
+    @votes = PoliticianVotes.gather_votes_by_politician([politician])[0] 
+    @chart = ChartMaker.analytics_pie_chart(@votes)
   end 
 end 

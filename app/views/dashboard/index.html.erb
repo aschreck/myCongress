@@ -8,6 +8,7 @@
         <h4 class='centered index-button' ><%= link_to "See More Votes", "/politician?name=#{presenter.politician}", class: 'button' %></h4>
       </div>
       <div class='politicianVotes'>
+        <h4 id="recent-tag">Most Recent Vote:</h4>
           <div class='vote'>
             <ul>
             <h4 class="title">Title: <%=presenter.recent_bill_title%></h4>

@@ -1,6 +1,5 @@
-
 <div class = "show-heading">
-  <h1 id="show-element-1"><%=@votes.politician%> (<%=@votes.votes.first.chamber %>) </h1> 
+  <h1 id="show-element-1"><%={@votes.politician}%> </h1> 
   <%=link_to "Unfollow", "/follow?name=#{@votes.politician}", method: :delete, class: "button show-element-2" %>
 </div>
 <div class="graph" id='chartContainer'><%= @chart.render() %></div>
@@ -9,11 +8,11 @@
     <div class='vote'>
       <ul>
         <h4 class="title">Title: <%=vote.bill_title%></h4>
+        <li class="chamber">Chamber: <%=vote.chamber%></li>
         <li class="p-vote"><%=@votes.politician%> voted <%= vote.vote_of_politician%> on this bill.</li>
         <li class="spread">There were <%=vote.votes_for%> votes in favor, <%= vote.votes_against%> votes against, and <%=vote.abstentions%> abstentions.</li>
         <li class="date">Vote took place on <%=vote.date%> at <%=vote.time%></li>
         <% if vote.type == "Bill"%>
-        </br>
         <li><%= link_to "View Bill", "/bill?id=#{vote.bill_id}", class: "button"%> </li>
         <% end %>
         </ul>
