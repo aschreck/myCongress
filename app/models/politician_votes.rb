@@ -20,6 +20,7 @@ class PoliticianVotes
     pv.votes = votes.map do |vote|
       Vote.make_vote(vote)
     end
+    pv.gather_analytics(pv.votes)
     pv
   end
 

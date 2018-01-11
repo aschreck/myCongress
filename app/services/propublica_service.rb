@@ -9,7 +9,6 @@ class PropublicaService
   def get_politician_votes(politician)
     all_votes = get_json("/congress/v1/members/#{politician.uid}/votes.json")[:results][0][:votes]
     pv = PoliticianVotes.make_politician_votes(politician, all_votes)
-    pv.gather_analytics(pv.votes)
     pv
   end
 

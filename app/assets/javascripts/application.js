@@ -29,8 +29,13 @@ $(document).ready(function () {
         $(".politicians").empty();
         data.forEach(element => {
           var name = element.name
-          $(".politicians").append(`<p>${name} </p>`)  
-          $(".politicians").append(`<a href='/follow?name=${name}'>Follow</a> </br >`)  
+          $(".politicians").append(`
+            <div>
+            <p>${name} </p>
+            <a href='/follow?name=${name}'>Follow</a> </br >
+            </div>
+          `)  
+          // $(".politicians").append(``)  
         });
       }
     })
