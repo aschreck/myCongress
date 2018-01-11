@@ -11,6 +11,7 @@
  <% end %>
 
   <p id="bill-summary"><%=@bill.summary%></p>
+ <h4 class='centered'>Latest Legislative Action: <%=@bill.last_action%></h4>
   <div class='graph' id="chartContainer-1"><%= @charts[0].render() %></div>
   <% unless @charts[1].nil?%>
     <div class='graph' id="chartContainer-2"><%= @charts[1].render() %></div>
