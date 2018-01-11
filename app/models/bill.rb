@@ -22,8 +22,8 @@ class Bill
     @website_url = params[:congressdotgov_url]
     @sponsor_party = params[:sponsor_party]
     @sponsor_state = params[:sponsor_state]
-    @d_cosponsors = params[:cosponsors_by_party][:D]
-    @r_cosponsors = params[:cosponsors_by_party][:R]
+    @d_cosponsors = params[:cosponsors_by_party][:D] || 0
+    @r_cosponsors = params[:cosponsors_by_party][:R] || 0 
     @summary= params[:summary_short]
     @last_action = params[:latest_major_action]
     @votes =[]

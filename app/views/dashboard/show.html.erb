@@ -1,13 +1,15 @@
 
-<h1 class='p-heading'><%= "#{@votes.politician}"%> </h1> 
-<p><%=link_to "Unfollow", "/follow?name=#{@votes.politician}", method: :delete %> </p>
+<div class = "show-heading">
+  <h1 id="show-element-1"><%= "#{@votes.politician}"%> </h1> 
+  <%=link_to "Unfollow", "/follow?name=#{@votes.politician}", method: :delete, class: "button show-element-2" %>
+</div>
 <div class="graph" id='chartContainer'><%= @chart.render() %></div>
 <div class='politicianVotes'>
   <% @votes.votes.each do |vote|%>
     <div class='vote'>
       <ul>
         <% if vote.type == "Bill"%>
-        <li><%= link_to "View Bill", "/bill?id=#{vote.bill_id}"%> </li>
+        <li><%= link_to "View Bill", "/bill?id=#{vote.bill_id}", class: "button"%> </li>
         <% end %>
         <h4 class="title">Title: <%=vote.bill_title%></h4>
         <li class="chamber">Chamber: <%=vote.chamber%></li>

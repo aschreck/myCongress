@@ -1,6 +1,13 @@
-<%=@bill.title%>
+<h1><%= @bill.short_title%></h1>
+<div class="sponsor">
+  <p> <%="#{@bill.sponsor}(#{@bill.sponsor_party},#{@bill.sponsor_state}) along with #{@bill.d_cosponsors} Democrats and #{@bill.r_cosponsors} Republicans"%>
+</div>
+
+<p id="bill-summary"><%=@bill.summary%></p>
 <div class='graph' id="chartContainer-1"><%= @charts[0].render() %></div>
-<div class='graph' id="chartContainer-2"><%= @charts[1].render() %></div>
+<% unless @charts[1].nil?%>
+  <div class='graph' id="chartContainer-2"><%= @charts[1].render() %></div>
+<% end %>
 <% unless @charts[2].nil?%>
   <div class='graph' id="chartContainer-3"><%= @charts[2].render() %></div> 
 <% end %>
