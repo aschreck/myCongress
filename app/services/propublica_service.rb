@@ -7,11 +7,8 @@ class PropublicaService
   end
 
   def get_politician_votes(politician)
-    all_votes = get_json("/congress/v1/members/#{politician.uid}/votes.json")
-    pv = PoliticianVotes.new(politician.name)
-    pv.votes = all_votes[:results][0][:votes].map do |vote|
-      captured_vote = Vote.new(vote) 
-    end
+    all_votes = get_json("/congress/v1/members/#{politician.uid}/votes.json")[:results][0][:votes]
+    pv = PoliticianVotes.make_politician_votes(politician, all_votes)
     pv.gather_analytics(pv.votes)
     pv
   end

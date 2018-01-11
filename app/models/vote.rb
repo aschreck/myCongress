@@ -44,4 +44,8 @@ class Vote
     data.downcase
   end 
 
+  def self.make_vote(vote)
+    Vote.new(vote)
+  end 
+
 end

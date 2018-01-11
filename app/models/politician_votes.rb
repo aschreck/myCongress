@@ -15,6 +15,14 @@ class PoliticianVotes
     end
   end
 
+  def self.make_politician_votes(politician, votes)
+    pv = PoliticianVotes.new(politician.name)
+    pv.votes = votes.map do |vote|
+      Vote.make_vote(vote)
+    end
+    pv
+  end
+
   def gather_analytics(votes)
     analyst = VotesAnalyst.new
     analyst.vote_totals(votes)
