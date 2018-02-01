@@ -1,24 +1,3 @@
-# README
+Aaron Schreck built this project as a part of his education at Turing School of Software and Design.  Once logged in, users can follow congressional politicians, see their votes, and read about the bills in question. Additionlly, the application provides basic statistical analysis and graphs on that data.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The application is live [here](https://politi-tracker-app.herokuapp.com/home)
